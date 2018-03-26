@@ -1,4 +1,5 @@
 ### Low Power Ticker
+### Low Power Ticker
 
 Implementing the low power ticker enables Mbed OS to perform power efficient timing operations that only request millisecond accuracy. You can use this API to schedule events, record elapsed time and drive the tickless OS scheduler.
 
@@ -44,11 +45,11 @@ Hardware low power ticker capabilities.
 
 We are working on the new HAL low power ticker API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the low power ticker API in both variants. First, you need to implement the current API. You can find it on master branch:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/lp__ticker__api_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/hal/ticker_api.h)
 
 To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against the `feature-hal-spec-ticker` branch. You can find the API and specification for the new low power ticker API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-ticker/hal/lp_ticker_api.h)
 
 To enable low power ticker support in Mbed OS, add the `LPTICKER` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -62,8 +63,8 @@ mbed test -t <toolchain> -m <target> -n tests-mbed_hal-common_ticker*,tests-mbed
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-ticker/TESTS/mbed_hal/lp_ticker/lp_ticker_api_tests.h)
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-ticker/TESTS/mbed_hal/common_tickers/ticker_api_tests.h)
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-ticker/TESTS/mbed_hal/common_tickers_freq/ticker_api_test_freq.h)
